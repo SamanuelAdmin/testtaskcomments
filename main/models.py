@@ -9,5 +9,6 @@ class Comment(models.Model):
 	time_create = models.DateTimeField(auto_now_add=True)
 	parentComment = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
 
-	def __str__(self):
-		return f'[{self.id}] {self.username} {self.time_create}'
+	# def __str__(self):
+	# 	return f'[{self.id}] {self.username} {self.time_create}'
+

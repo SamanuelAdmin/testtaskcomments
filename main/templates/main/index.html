@@ -6,14 +6,14 @@
 	<title>Comments</title>
 </head>
 <body>
-	<h1>{{ page }}</h1>
-
 	{% if commentsCount > 0 %}
-		<ul>
-			{% for comment in comments %}
-				<li>{{ comment.username }} {{ comment.time_create }}</li>
-			{% endfor %}
-		</ul>
+        {% for comment in comments %}
+            <div>{{ comment.username }} {{ comment.time_create }} {{ comment.text }}</div>
+
+            {% for cresponse in comment.comment_set.all %}
+                {% include "main/cresponse.html" %}
+            {% endfor %}
+        {% endfor %}
 	{% else %}
 		<h1>Comments has not been found</h1>
 	{% endif %}

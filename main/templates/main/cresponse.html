@@ -1,0 +1,12 @@
+{#SHOW RESPONSE#}
+
+<div style="padding: 10px;">
+    {{ cresponse.username }} {{ cresponse.time_create }} {{ cresponse.text }}
+
+    {% for resp in cresponse.comment_set.all %}
+        {% with cresponse=resp %}
+            {% include "main/cresponse.html" %}
+        {% endwith %}
+    {% endfor %}
+
+</div>
