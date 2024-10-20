@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Comments</title>
+</head>
+<body>
+	<h1>{{ page }}</h1>
+
+	{% if commentsCount > 0 %}
+		<ul>
+			{% for comment in comments %}
+				<li>{{ comment.username }} {{ comment.time_create }}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<h1>Comments has not been found</h1>
+	{% endif %}
+</body>
+</html>
