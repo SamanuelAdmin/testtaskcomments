@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=" {% static "main/css/style.css" %} ">
+	<title>{% block title %}{% endblock %}@Comments</title>
+    <style>
+        @font-face {
+            font-family: "Involve";
+            src: url(" {% static "main/files/Involve-Regular.ttf" %} ");
+        }
+    </style>
+
+    <script src="{% static 'main/js/set_reply_id.js' %}"></script>
+</head>
+<body>
+	{% block body %}{% endblock %}
+
+    <div class="footer-container">
+        <a href="https://github.com/SamanuelAdmin">Created by @SamanuelAdmin</a>
+    </div>
+</body>
+</html>
