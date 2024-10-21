@@ -1,0 +1,283 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    color: #555B6E;
+    font-family: "Involve";
+}
+
+body {
+    /*background: white; 255, 214, 186*/
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkred !important;
+}
+
+.main-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .make-comment-form {
+    max-width: 100%;
+    width: 100%;
+    background: rgba(85, 91, 110, 0.1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.main-container .make-comment-form * {
+    margin-left: 10px;
+    maring-right: 10px;
+}
+
+.main-container .make-comment-form .form-error {
+    color: red;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.main-container .make-comment-form .form-field-error {
+    font-size: 14px;
+    font-weight: 600;
+    color: red !important;
+    margin-left: 30px;
+}
+
+.main-container .make-comment-form .form-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.main-container .make-comment-form .form-column {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.main-container .make-comment-form .form-row .field-label {
+    display: flex;
+}
+
+#is-required-field {
+    color: red !important;
+}
+
+.main-container .make-comment-form input, .main-container .make-comment-form textarea {
+    background: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    border-bottom: 1px black solid;
+    width: 20%;
+}
+
+.main-container .make-comment-form input:focus {
+    outline: none;
+    border-bottom: 1px blue solid;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.main-container .make-comment-form textarea:focus {
+    outline: none;
+    border: 1px blue solid;
+}
+
+.main-container .make-comment-form textarea {
+    position: revert;
+    border: 1px black solid;
+    min-height: 50px;
+    height: 70px;
+    box-sizing: border-box;
+    max-width: calc(100% - 20px);
+    width: calc(100% - 20px);
+    padding: 5px;
+}
+
+.main-container .make-comment-form .submit-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.main-container .make-comment-form .submit-area .comment-reply-field {
+    margin-right: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.main-container .make-comment-form .submit-area .comment-reply-field .replied-comment-text {
+    overflow: hidden;
+    border-top: 2px rgba(137, 176, 174, 1) solid;
+    border-left: 2px rgba(137, 176, 174, 1) solid;
+    box-shadow: inset 0px 5px 5px rgba(137, 176, 174, 0.3);
+    position: relative;
+    padding-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.main-container .make-comment-form .submit-area .comment-reply-field .restore-comment-reply {
+    font-size: 16px;
+    font-weight: 900;
+    color: red;
+    border: 5px red solid;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main-container .make-comment-form .submit-area .submit-button {
+    background: rgba(137, 176, 174, 0.4);
+    color: black;
+    border: 3px rgba(137, 176, 174, 1) solid;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.main-container .make-comment-form .submit-area .submit-button:hover {
+    cursor: pointer;
+}
+
+
+
+.sorting-field {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.sorting-field .sorting-buttons {
+    font-weight: 700;
+    border: 4px #BEE3DB solid;
+    padding: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.sorting-field .choosen {
+    background: #FFD6BA;
+}
+
+.base-comment-container {
+    /*border-top: 1px #89B0AE solid;*/
+    /*border-left: 1px #89B0AE solid;*/
+    /*border-radius: 5px 0px 0px 0px;*/
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.base-comment-container .header {
+    background: #BEE3DB;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.base-comment-container .header .username {
+    font-weight: 900;
+    color: black
+}
+
+.base-comment-container .header .time {
+
+}
+
+.base-comment-container .text {
+    font-size: 16px;
+    padding-top: 15px;
+    color: black;
+}
+
+.base-comment-container .reply-button {
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0);
+    border: 1px #555B6E solid;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.cresp-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.point {
+    /*border: 2px gray solid;*/
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 2px;
+    width: 2px;
+}
+
+.response {
+    margin-top: 10px;
+    width: 100%;
+    border-top: 2px #BEE3DB solid;
+    border-left: 2px #BEE3DB solid;
+    padding: 5px;
+}
+
+.response .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.response .header .username {
+    font-weight: 700;
+}
+
+.response .header .time {
+
+}
+
+.response .text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.response .reply-button {
+    background: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.reply-button:hover {
+    cursor: pointer;
+}
+
+
+.footer-container {
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

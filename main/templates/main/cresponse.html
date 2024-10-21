@@ -1,0 +1,22 @@
+{#SHOW RESPONSE#}
+
+<div class="cresp-container">
+    <div class="point"></div>
+
+    <div class="response">
+        <div class="header">
+            <div class="username">{{ cresponse.username }}</div>
+            <div class="time">{{ cresponse.time_create }}</div>
+        </div>
+        <div class="text">{{ cresponse.text }}</div>
+        <button onclick='setReplyID({{ cresponse.pk }}, "{{ cresponse.text|escapejs  }}");' class="reply-button">Reply</button>
+
+        <a></a>
+
+        {% for resp in cresponse.comment_set.all %}
+            {% with cresponse=resp %}
+                {% include "main/cresponse.html" %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+</div>

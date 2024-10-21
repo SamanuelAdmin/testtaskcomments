@@ -1,0 +1,71 @@
+{% extends "main/template.html" %}
+
+{% block title %} Main {% endblock %}
+
+{% block body %}
+    <div class="main-container">
+        <form id="addCommentForm" action="" method="POST" class="make-comment-form">
+            {% csrf_token %}
+
+            <div class="form-error">{{ addCommentsForm.non_field_errors }}</div>
+            {% for formField in addCommentsForm %}
+                <div class="{% if formField.field.widget.attrs.class == 'text-input' %}form-column{% else %}form-row{% endif %}">
+                    <div class="field-label">
+                        {{ formField.label }}
+                        {% if formField.field.required  %}
+                            <span id="is-required-field">*</span>
+                        {% endif %}
+                    </div>
+                    {{ formField }}
+                </div>
+                <div class="form-field-error">{{ formField.errors }}</div>
+            {% endfor %}
+
+            <div class="submit-area">
+                <button class="submit-button" type="submit" id="leaveCommentButton">Leave your comment</button>
+
+                <div class="comment-reply-field" id="commentReplyField" style="display: none">
+                    <label class="replied-comment-text" id="repliedCommentText"></label>
+                    <input id="replyID" type="hidden" value="" name="replyID">
+                    <div class="restore-comment-reply" onclick="restoreComment();">x</div>
+                </div>
+            </div>
+        </form>
+
+        <div class="comments-field">
+            {% if commentsCount > 0 %}
+                <div class="sorting-field">
+                    <a href="{% url 'home' %}?s=time_create"
+                       class="sorting-buttons {% if sortingType == 'time_create' %}choosen{% endif %}"
+                    >Old</a>
+                    <a href="{% url 'home' %}?s=-time_create"
+                       class="sorting-buttons {% if sortingType == '-time_create' %}choosen{% endif %}"
+                    >New</a>
+                    <a href="{% url 'home' %}?s=username"
+                       class="sorting-buttons {% if sortingType == 'username' %}choosen{% endif %}"
+                    >Username</a>
+                    <a href="{% url 'home' %}?s=email"
+                       class="sorting-buttons {% if sortingType == 'email' %}choosen{% endif %}"
+                    >Email</a>
+                </div>
+
+                {% for comment in comments %}
+                    <div class="base-comment-container">
+                        <div class="header">
+                            <div class="username">{{ comment.username }}</div>
+                            <div class="time">{{ comment.time_create }}</div>
+                        </div>
+                        <div class="text">{{ comment.text }}</div>
+                        <button onclick='setReplyID({{ comment.pk }}, "{{ comment.text|escapejs  }}");' class="reply-button">Reply</button>
+                    </div>
+
+                    {% for cresponse in comment.comment_set.all %}
+                        {% include "main/cresponse.html" %}
+                    {% endfor %}
+                {% endfor %}
+            {% else %}
+                <h1 style="padding: 30px;">Comments has not been found :c</h1>
+            {% endif %}
+        </div>
+    </div>
+{%  endblock %}
