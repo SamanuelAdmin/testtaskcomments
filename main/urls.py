@@ -5,6 +5,6 @@ from . import views as mainviews
 
 urlpatterns = [
     path('', mainviews.index, name='home'),
-    path('<int:page>/', mainviews.index),
+    path('<int:page>/', mainviews.index, name="onpage"),
     path('captcha/', include('captcha.urls')),
 ]

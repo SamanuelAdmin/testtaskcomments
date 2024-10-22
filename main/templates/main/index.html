@@ -16,7 +16,16 @@
                             <span id="is-required-field">*</span>
                         {% endif %}
                     </div>
+
                     {{ formField }}
+
+                    {% if formField.field.widget.attrs.class == 'text-input' %}
+                        <div class="instruments">
+                            {% for elemName, elemTag in instrumentMenu.items %}
+                                <div class="instrument" onclick="add_HTML_tag('{{ elemTag }}');">{ {{ elemName }} }</div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="form-field-error">{{ formField.errors }}</div>
             {% endfor %}
@@ -33,7 +42,7 @@
         </form>
 
         <div class="comments-field">
-            {% if commentsCount > 0 %}
+            {% if comments.paginator.count > 0 %}
                 <div class="sorting-field">
                     <a href="{% url 'home' %}?s=time_create"
                        class="sorting-buttons {% if sortingType == 'time_create' %}choosen{% endif %}"
@@ -55,7 +64,7 @@
                             <div class="username">{{ comment.username }}</div>
                             <div class="time">{{ comment.time_create }}</div>
                         </div>
-                        <div class="text">{{ comment.text }}</div>
+                        <div class="text">{{ comment.text|safe }}</div>
                         <button onclick='setReplyID({{ comment.pk }}, "{{ comment.text|escapejs  }}");' class="reply-button">Reply</button>
                     </div>
 
@@ -67,5 +76,20 @@
                 <h1 style="padding: 30px;">Comments has not been found :c</h1>
             {% endif %}
         </div>
+
+        <div class="paginator-container">
+            <div class="paginator">
+                {% if comments.has_previous %}
+                    <a class="page previous-page" href="{% url 'onpage' comments.previous_page_number %}?{{ request.GET.urlencode }}"><<</a>
+                {% endif %}
+
+                <div>{{ comments.number }} of {{ comments.paginator.num_pages }}</div>
+
+                {% if comments.has_next %}
+                    <a class="page next-page" href="{% url 'onpage' comments.next_page_number %}?{{ request.GET.urlencode }}">>></a>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 {%  endblock %}

@@ -11,6 +11,7 @@ body {
 
 a {
     text-decoration: none;
+    transition: 0.1s ease;
 }
 
 a:hover {
@@ -100,6 +101,16 @@ a:hover {
     max-width: calc(100% - 20px);
     width: calc(100% - 20px);
     padding: 5px;
+}
+
+.main-container .make-comment-form .instruments {
+    display: flex;
+    font-weight: 500;
+}
+
+.main-container .make-comment-form .instruments .instrument:hover {
+    color: darkred;
+    cursor: pointer;
 }
 
 .main-container .make-comment-form .submit-area {
@@ -219,6 +230,11 @@ a:hover {
     padding-right: 20px;
     border-radius: 10px;
     font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.base-comment-container .reply-button:hover {
+    background: rgba(190, 227, 219, 0.5);
 }
 
 .cresp-container {
@@ -266,10 +282,48 @@ a:hover {
 .response .reply-button {
     background: rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
+    transition: 0.2s ease;
+}
+
+.response .reply-button:hover {
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .reply-button:hover {
     cursor: pointer;
+}
+
+.paginator-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.paginator-container .paginator {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.paginator-container .paginator .page {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px #BEE3DB solid;
+    transition: 0.3s ease;
+}
+
+.paginator-container .paginator .page:hover {
+    cursor: pointer;
+    background: rgba(255, 214, 186, 0.5);
+}
+
+.paginator-container .paginator .choosen {
+    background: rgba(255, 214, 186, 1);
 }
 
 
