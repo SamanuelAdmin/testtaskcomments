@@ -43,7 +43,7 @@
             </div>
         </form>
 
-        <div class="comments-field">
+        <div class="comments-field" id="mainCommentsContainer">
             {% if comments.paginator.count > 0 %}
                 <div class="sorting-field">
                     <a href="{% url 'home' %}?s=time_create"
@@ -61,7 +61,7 @@
                 </div>
 
                 {% for comment in comments %}
-                    <div class="base-comment-container" id="mainCommentsContainer">
+                    <div class="base-comment-container">
                         <div class="header">
                             <div class="username">{{ comment.username }}</div>
                             <div class="time">{{ comment.time_create }}</div>
@@ -96,7 +96,7 @@
                     {% endfor %}
                 {% endfor %}
             {% else %}
-                <h1 style="padding: 30px;" id="mainCommentsContainer">Comments has not been found :c</h1>
+                <h1 style="padding: 30px;">Comments has not been found :c</h1>
             {% endif %}
         </div>
 
