@@ -20,6 +20,8 @@ Task (junior):
   <h3>And now your server is on <code>localhost:8000</code></h3>
 </div>
 
+<h2>DEFAULT ADMIN CREDENTIALS <code>admin : admin</code></h2>
+
 <br><br>
 Docker file:
 ```
