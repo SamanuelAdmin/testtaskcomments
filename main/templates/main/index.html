@@ -1,10 +1,12 @@
 {% extends "main/template.html" %}
+{% load filetype_checker %}
+{% load static %}
 
 {% block title %} Main {% endblock %}
 
 {% block body %}
     <div class="main-container">
-        <form id="addCommentForm" action="" method="POST" class="make-comment-form">
+        <form id="addCommentForm" action="" method="POST" enctype="multipart/form-data" class="make-comment-form">
             {% csrf_token %}
 
             <div class="form-error">{{ addCommentsForm.non_field_errors }}</div>
@@ -59,12 +61,33 @@
                 </div>
 
                 {% for comment in comments %}
-                    <div class="base-comment-container">
+                    <div class="base-comment-container" id="mainCommentsContainer">
                         <div class="header">
                             <div class="username">{{ comment.username }}</div>
                             <div class="time">{{ comment.time_create }}</div>
                         </div>
                         <div class="text">{{ comment.text|safe }}</div>
+
+                        {% if comment.file %}
+                            <div class="file-container">
+                                {% if comment.file.path|fileMime == "text/plain" %}
+                                    <a class="download-file-button" href="{{ comment.file.url }}" download>
+                                        <img src="{% static 'main/icons/txt_file_icon.png' %}" class="icon">
+                                        {{ comment.file.name }}
+                                    </a>
+                                {% else %}
+                                    <a href="{{ comment.file.url }}"
+                                       data-lightbox="image-{{ comment.file.name }}"
+                                       data-title="{{ comment.file.name }}"
+                                    >
+                                        <img class="image-preview"
+                                             src="{{ comment.file.url }}"
+                                             alt="{{ comment.file.alt_text }}">
+                                    </a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
                         <button onclick='setReplyID({{ comment.pk }}, "{{ comment.text|escapejs  }}");' class="reply-button">Reply</button>
                     </div>
 

@@ -6,23 +6,33 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href=" {% static "main/css/style.css" %} ">
-	<title>{% block title %}{% endblock %}@Comments</title>
+    <link rel="stylesheet" href=" {% static "main/css/base_comment.css" %} ">
+    <link rel="stylesheet" href=" {% static "main/css/reply.css" %} ">
+    <link rel="stylesheet" href=" {% static "main/css/make_comment_form.css" %} ">
+    <link href="{% static 'main/lightbox/lightbox2-2.11.5/dist/css/lightbox.css' %}" rel="stylesheet" />
+    <title>{% block title %}{% endblock %}@Comments</title>
     <style>
         @font-face {
             font-family: "Involve";
             src: url(" {% static "main/files/Involve-Regular.ttf" %} ");
         }
     </style>
-
-
-    <script src="{% static 'main/js/set_reply_id.js' %}"></script>
-    <script src="{% static 'main/js/add_html_tag.js' %}"></script>
 </head>
-<body>
+<body class="body-content">
+   <script>0</script>
+
 	{% block body %}{% endblock %}
 
     <div class="footer-container">
         <a href="https://github.com/SamanuelAdmin">Created by @SamanuelAdmin</a>
     </div>
+
+
+    <script defer src="{% static 'main/js/set_reply_id.js' %}"></script>
+    <script defer src="{% static 'main/js/add_html_tag.js' %}"></script>
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="{% static 'main/lightbox/lightbox2-2.11.5/dist/js/lightbox-plus-jquery.js' %}"></script>
+    <script defer src="{% static 'main/js/ajax_loader.js' %}"></script>
+    <script defer src="{% static 'main/js/lightbox_configs.js' %}"></script>
 </body>
 </html>

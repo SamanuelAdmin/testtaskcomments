@@ -15,15 +15,19 @@ from .modules import permitted_html_elements
 def getAddingForm(request):
 	# adding form for leave some comments
 	if request.POST:
-		addCommentsForm = AddCommentForm(request.POST)
+		addCommentsForm = AddCommentForm(request.POST, request.FILES)
 		if addCommentsForm.is_valid():
 			replyID = request.POST.get('replyID')
 
 			if replyID:
-				savedComment = addCommentsForm.save(commit=False) # dont save
-				savedComment.parentComment = Comment.objects.get(pk=replyID)
+				savedComment = addCommentsForm.save(commit=False) # just get obj, dont save
 
-			addCommentsForm.save()
+				if savedComment: # if data was validate
+					savedComment.parentComment = Comment.objects.get(pk=replyID)
+
+			# need try/except only for not validate data situations
+			try: addCommentsForm.save()
+			except ValueError: pass
 			addCommentsForm.clean() # returning clear form
 	else:
 		addCommentsForm = AddCommentForm()
@@ -49,7 +53,7 @@ def index(request: HttpRequest, page=1) -> HttpResponse:
 		try: allMainComments = allMainComments.order_by(sortingType)
 		except: pass
 
-	commentsPage = addPaginator(allMainComments, page, elemOnPage=5)
+	commentsPage = addPaginator(allMainComments, page, elemOnPage=20)
 
 
 	return render(

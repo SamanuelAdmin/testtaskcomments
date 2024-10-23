@@ -1,4 +1,6 @@
 {#SHOW RESPONSE#}
+{% load filetype_checker %}
+{% load static %}
 
 <div class="cresp-container">
     <div class="point"></div>
@@ -8,10 +10,31 @@
             <div class="username">{{ cresponse.username }}</div>
             <div class="time">{{ cresponse.time_create }}</div>
         </div>
-        <div class="text">{{ cresponse.text|safe }}</div>
-        <button onclick='setReplyID({{ cresponse.pk }}, "{{ cresponse.text|escapejs  }}");' class="reply-button">Reply</button>
 
-        <a></a>
+        <div class="text">{{ cresponse.text|safe }}</div>
+
+        {% if cresponse.file %}
+            <div class="file-container">
+                {% if cresponse.file.path|fileMime == "text/plain" %}
+                    <a class="download-file-button" href="{{ cresponse.file.url }}" download>
+                        <img src="{% static 'main/icons/txt_file_icon.png' %}" class="icon">
+                        {{ cresponse.file.name }}
+                    </a>
+                {% else %}
+                    <a href="{{ cresponse.file.url }}"
+                       data-lightbox="image-{{ cresponse.file.name }}"
+                       data-title="{{ cresponse.file.name }}"
+                    >
+                        <img class="image-preview"
+                             src="{{ cresponse.file.url }}"
+                             alt="{{ cresponse.file.alt_text }}"
+                        >
+                    </a>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <button onclick='setReplyID({{ cresponse.pk }}, "{{ cresponse.text|escapejs  }}");' class="reply-button">Reply</button>
 
         {% for resp in cresponse.comment_set.all %}
             {% with cresponse=resp %}

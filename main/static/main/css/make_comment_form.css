@@ -1,0 +1,150 @@
+.main-container .make-comment-form {
+    max-width: 100%;
+    width: 100%;
+    background: rgba(85, 91, 110, 0.1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.main-container .make-comment-form * {
+    margin-left: 10px;
+    maring-right: 10px;
+}
+
+.main-container .make-comment-form .form-error {
+    color: red;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.main-container .make-comment-form .form-field-error {
+    font-size: 14px;
+    font-weight: 600;
+    color: red !important;
+    margin-left: 30px;
+}
+
+.main-container .make-comment-form .form-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.main-container .make-comment-form .form-column {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.main-container .make-comment-form .form-row .field-label {
+    display: flex;
+}
+
+#is-required-field {
+    color: red !important;
+}
+
+.main-container .make-comment-form input, .main-container .make-comment-form textarea {
+    background: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    border-bottom: 1px black solid;
+    width: 20%;
+}
+
+.main-container .make-comment-form input:focus {
+    outline: none;
+    border-bottom: 1px blue solid;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.main-container .make-comment-form textarea:focus {
+    outline: none;
+    border: 1px blue solid;
+}
+
+.main-container .make-comment-form textarea {
+    position: revert;
+    border: 1px black solid;
+    min-height: 50px;
+    height: 70px;
+    box-sizing: border-box;
+    max-width: calc(100% - 20px);
+    width: calc(100% - 20px);
+    padding: 5px;
+}
+
+.main-container .make-comment-form .instruments {
+    display: flex;
+    font-weight: 500;
+}
+
+.main-container .make-comment-form .instruments .instrument:hover {
+    color: darkred;
+    cursor: pointer;
+}
+
+.main-container .make-comment-form .submit-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.main-container .make-comment-form .submit-area .comment-reply-field {
+    margin-right: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.main-container .make-comment-form .submit-area .comment-reply-field .replied-comment-text {
+    overflow: hidden;
+    border-top: 2px rgba(137, 176, 174, 1) solid;
+    border-left: 2px rgba(137, 176, 174, 1) solid;
+    box-shadow: inset 0px 5px 5px rgba(137, 176, 174, 0.3);
+    position: relative;
+    padding-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.main-container .make-comment-form .submit-area .comment-reply-field .restore-comment-reply {
+    font-size: 16px;
+    font-weight: 900;
+    color: red;
+    border: 5px red solid;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main-container .make-comment-form .submit-area .submit-button {
+    background: rgba(137, 176, 174, 0.4);
+    color: black;
+    border: 3px rgba(137, 176, 174, 1) solid;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.main-container .make-comment-form .submit-area .submit-button:hover {
+    cursor: pointer;
+}
+
+.main-container .make-comment-form .file-input-button {
+    border-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
+}
+
+.main-container .make-comment-form .file-input-button::-webkit-file-upload-button {
+    border: 2px rgba(137, 176, 174, 0.5) solid;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

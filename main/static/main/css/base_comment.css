@@ -1,0 +1,79 @@
+.base-comment-container {
+    /*border-top: 1px #89B0AE solid;*/
+    /*border-left: 1px #89B0AE solid;*/
+    /*border-radius: 5px 0px 0px 0px;*/
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.base-comment-container .header {
+    background: #BEE3DB;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.base-comment-container .header .username {
+    font-weight: 900;
+    color: black
+}
+
+.base-comment-container .header .time {
+
+}
+
+.base-comment-container .text {
+    font-size: 16px;
+    padding-top: 15px;
+    color: black;
+}
+
+.base-comment-container .file-container {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.base-comment-container .file-container .download-file-button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+}
+
+.base-comment-container .file-container .download-file-button:hover {
+}
+
+.base-comment-container .file-container .download-file-button .icon {
+    width: 24px;
+}
+
+.base-comment-container .file-container .image-preview {
+    max-width: 240px;
+    max-height: 240px;
+}
+
+.base-comment-container .file-container .image-preview:hover {
+    cursor: pointer;
+    outline: 2px darkred solid;
+}
+
+.base-comment-container .reply-button {
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0);
+    border: 1px #555B6E solid;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.base-comment-container .reply-button:hover {
+    background: rgba(190, 227, 219, 0.5);
+}
