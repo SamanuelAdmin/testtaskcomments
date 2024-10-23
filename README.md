@@ -17,10 +17,10 @@ Task (junior):
     <li>Run a container using <br><code>docker run -p 8000:8000 testtask</code></li>
   </ol>
 
-  <h3>And now your server is on <code>localhost:8000</code></h3>
+  <i>And now your server is on <code>localhost:8000</code></i>
 </div>
 
-<h2>DEFAULT ADMIN CREDENTIALS <code>admin : admin</code></h2>
+<strong>DEFAULT ADMIN CREDENTIALS <code>admin : admin</code></strong>
 
 <br><br>
 Docker file:
