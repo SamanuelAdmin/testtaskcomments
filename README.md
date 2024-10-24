@@ -22,7 +22,7 @@ Task (junior):
 
 <strong>DEFAULT ADMIN CREDENTIALS <code>admin : admin</code></strong>
 
-<br>Small video of final product: <a href="https://www.youtube.com/watch?v=w2r8siSsj40">https://www.youtube.com/watch?v=w2r8siSsj40</a>
+<br>Small video about final product: <a href="https://www.youtube.com/watch?v=w2r8siSsj40">https://www.youtube.com/watch?v=w2r8siSsj40</a>
 
 <br><br>
 Docker file:
