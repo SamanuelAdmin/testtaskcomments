@@ -4,7 +4,8 @@ Task (junior):
 [Python_removed.pdf](https://github.com/user-attachments/files/17494590/Python_removed.pdf)
 
 User documentation (ukr.):
-https://github.com/SamanuelAdmin/testtaskcomments/issues/1#issue-2676361356
+
+https://github.com/user-attachments/assets/8b5d8897-b2cc-42fd-b9c6-26eb03eb7f75
 
 
 
